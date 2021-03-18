@@ -39,7 +39,7 @@ class FriendRequestSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         friend_request = FriendRequest.objects.create(
-            # TODO: WHY IS THIS HAPPENING???
+            # TODO: WHY ADDING FROM USER IS NECESSARY???
             from_user=validated_data['from_user'],
             to_user=validated_data['to_user']
         )
